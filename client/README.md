@@ -1,6 +1,6 @@
-# nomad-house
+# nomad-house-client
 
->  Nomad House client application
+> My riveting Nuxt.js project
 
 ## Build Setup
 

@@ -1,10 +1,6 @@
-import colors from 'vuetify/src/util/colors'
+const colors = require('vuetify/es5/util/colors').default
 
-interface Position {
-  x: number
-  y: number
-}
-export default {
+module.exports = {
   mode: 'universal',
   /*
    ** Headers of the page
@@ -27,12 +23,6 @@ export default {
    ** Customize the progress-bar color
    */
   loading: { color: '#fff' },
-  router: {
-    scrollBehavior(_: Position, __: Position, savedPosition: Position) {
-      if (savedPosition) return savedPosition
-      else return { x: 0, y: 0 }
-    }
-  },
   /*
    ** Global CSS
    */
@@ -44,7 +34,12 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: ['@nuxt/typescript-build', '@nuxtjs/vuetify'],
+  buildModules: [
+    '@nuxt/typescript-build',
+    // Doc: https://github.com/nuxt-community/stylelint-module
+    '@nuxtjs/stylelint-module',
+    '@nuxtjs/vuetify'
+  ],
   /*
    ** Nuxt.js modules
    */
@@ -83,16 +78,10 @@ export default {
   /*
    ** Build configuration
    */
-  // build: {
-  /*
-   ** You can extend webpack config here
-   */
-  // extend(config, ctx) {}
-  // },
-  typescript: {
-    typeCheck: {
-      eslint: true
-      // eslintOptions: {}
-    }
+  build: {
+    /*
+     ** You can extend webpack config here
+     */
+    extend(config, ctx) {}
   }
 }
