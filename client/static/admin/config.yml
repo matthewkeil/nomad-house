@@ -1,0 +1,40 @@
+backend:
+  name: git-gateway
+  branch: master
+media_folder: 'static/media'
+public_folder: 'static/public'
+site_url: https://nomad.house
+collections:
+  - name: "categories"
+    label: "Categories"
+    folder: "content/categories"
+    create: true
+    slug: "{{slug}}"
+    identified_field: name
+    fields:
+      - { label: 'Name', name: 'name', widget: 'string' }
+      - { lable: 'Image', name: 'image', widget: 'image' }
+      - { label: 'Description', name: 'description', widget: 'markdown' }
+  - name: 'pos
+    label: 'Posts'
+    folder: 'content/posts'
+    preview_path: '{{slug}}'
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    create: true
+    fields:
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'blog' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Subtitle', name: 'subtitle', widget: 'string' }
+      - { label: 'Author', name: 'author', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { lable: 'Feature Image', name: 'featureImage', widget: 'image' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - {
+          label: 'Category',
+          name: 'category',
+          widget: 'relation',
+          collection: 'categories',
+          searchFields: 'name',
+          valueField: 'name',
+          multiple: 'true',
+        }
