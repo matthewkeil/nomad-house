@@ -10,13 +10,10 @@ module.exports = {
     'plugin:prettier/recommended', // goes with plugin
     'prettier', // from eslint-config-prettier
     'prettier/standard', // from eslint-config-prettier
-    'prettier/vue', // from eslint-config-prettier
+    'prettier/vue' // from eslint-config-prettier
   ],
-  plugins: [
-    'prettier',
-    'nuxt'
-  ],
+  plugins: ['prettier', 'nuxt'],
   rules: {
     'nuxt/no-cjs-in-config': 'off'
   }
-}
+};

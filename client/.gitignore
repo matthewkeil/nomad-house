@@ -3,7 +3,6 @@
 Thumbs.db
 
 # Local Env Files
-.env
 .env.local
 .env.*.local
 
