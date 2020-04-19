@@ -13,10 +13,11 @@
     "experimentalDecorators": true,
     "baseUrl": ".",
     "typeRoots": ["node_modules/@types"],
-    "types": ["node", "@nuxt/types"],
+    "types": ["node", "@nuxt/types", "@nuxtjs/vuetify"],
     "paths": {
       "~/*": ["./*"],
-      "@/*": ["@/*"]
+      "@/*": ["@/*"],
+      "@store": ["./store"]
     }
   },
   "exclude": ["node_modules", ".nuxt", "dist", "**/*.spec.ts", "test"]

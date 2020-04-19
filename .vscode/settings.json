@@ -1,6 +1,31 @@
 {
-  "cSpell.words": [
-    "cloudform",
-    "nuxt"
-  ]
+  "files.autoSave": "onFocusChange",
+  "editor.formatOnSave": true,
+  "eslint.run": "onSave",
+  "eslint.validate": [
+    "javascriptreact",
+    "javascript",
+    "typescriptreact",
+    "typescript",
+    "json",
+    "html",
+    "vue"
+  ],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typecript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "javascript.preferences.importModuleSpecifier": "auto",
+  "vetur.experimental.templateInterpolationService": true,
+  "cSpell.words": ["cloudform", "nuxt"]
 }
