@@ -1,12 +1,14 @@
 import { Store } from 'vuex';
 import { getModule } from 'vuex-module-decorators';
-import CMS from './cms';
+import CmsStore from './cms';
+import CoreStore from './core';
 
-// eslint-disable-next-line import/no-mutable-exports
-let cms: CMS;
+let cms: CmsStore;
+let core: CoreStore;
 function initializeStores(store: Store<any>): void {
-  cms = getModule(CMS, store);
+  cms = getModule(CmsStore, store);
+  core = getModule(CoreStore, store);
 }
 
-export { cms };
+export { cms, core };
 export const plugins = [(store: Store<any>) => initializeStores(store)];

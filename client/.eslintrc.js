@@ -14,6 +14,7 @@ module.exports = {
   ],
   plugins: ['prettier', 'nuxt'],
   rules: {
-    'nuxt/no-cjs-in-config': 'off'
+    'nuxt/no-cjs-in-config': 'off',
+    'import/no-mutable-exports': 0
   }
 };

@@ -1,6 +1,6 @@
 import { Module, VuexModule, Mutation, Action } from 'vuex-module-decorators';
 
-type Column = keyof CMS['tasks'];
+type Column = keyof CmsStore['tasks'];
 
 interface MoveTask {
   from: Column;
@@ -14,7 +14,7 @@ interface MoveTask {
   stateFactory: true,
   namespaced: true
 })
-export default class CMS extends VuexModule {
+export default class CmsStore extends VuexModule {
   tasks = {
     ready: ['slug-1', 'slug-2', 'slug-3'],
     reviewed: ['slug-4', 'slug-5', 'slug-6'],
