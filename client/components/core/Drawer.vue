@@ -1,23 +1,23 @@
 <template>
   <v-navigation-drawer v-model="drawerOpen" app dark temporary>
-    <!-- <v-list>
-      <v-list-tile
+    <v-list>
+      <v-list-item
         v-for="(link, i) in links"
         :key="i"
         :to="link.to"
         :href="link.href"
         @click="onClick($event, link)"
       >
-        <v-list-tile-title v-text="link.text" />
-      </v-list-tile>
-    </v-list> -->
+        <v-list-item-title v-text="link.text" />
+      </v-list-item>
+    </v-list>
   </v-navigation-drawer>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import { core } from '../../store';
 import { Component } from 'vue-property-decorator';
+import { core } from '../../store';
 
 @Component
 export default class CoreDrawer extends Vue {
