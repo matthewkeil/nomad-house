@@ -62,7 +62,7 @@ module.exports = {
   },
   typescript: {
     typeCheck: {
-      eslint: true
+      eslint: false
     }
   }
 };

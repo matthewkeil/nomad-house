@@ -16,8 +16,8 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import { core } from '../../store';
 import { Component } from 'vue-property-decorator';
+import { core } from '../../store';
 
 @Component
 export default class CoreDrawer extends Vue {

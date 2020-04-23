@@ -1,14 +1,14 @@
 <template>
-  <div>
-    <!-- eslint-disable-next-line -->
+  <div class="container">
     <v-dialog :value="!!activeTask" v-on:click:outside="closeDialog">
       <nuxt-child />
     </v-dialog>
-    <v-row class="board" justify="space-around">
-      <v-col v-for="([label, tasks], columnIndex) in columns" :key="columnIndex" cols="12" md="4">
+    <div class="board" :style="{ 'grid-template-columns': `repeat(${columns.length}, auto)` }">
+      <div v-for="([label, tasks], columnIndex) in columns" :key="columnIndex">
         <h2>{{ label }}</h2>
         <v-sheet
-          class="pa-12"
+          class="column"
+          :style="{ 'grid-template-rows': `repeat(${tasks.length}, auto)` }"
           color="grey lighten-3"
           @dragover.prevent
           @dragenter.prevent
@@ -31,14 +31,20 @@
             </v-card>
           </nuxt-link>
         </v-sheet>
-      </v-col>
-    </v-row>
+      </div>
+    </div>
   </div>
 </template>
 
 <style scss scoped>
 .board {
+  display: grid;
+  grid-column-gap: 1rem;
   width: 100%;
+}
+.column {
+  display: grid;
+  grid-row-gap: 1rem;
 }
 .card {
   padding: 0.5rem;
@@ -52,8 +58,6 @@ import Vue from 'vue';
 import { Component } from 'vue-property-decorator';
 import { cms } from '../../store';
 
-type Column = keyof typeof cms['tasks'];
-
 @Component
 export default class Tasks extends Vue {
   get activeTask() {
@@ -64,22 +68,22 @@ export default class Tasks extends Vue {
     return cms.tasks;
   }
 
-  get columns() {
+  get columns(): [string, string[]][] {
     return Object.entries(this.tasks).map(([label, tasks]) => [
-      label[0].toUpperCase() + label.slice(1),
+      label[0].toUpperCase().concat(label.slice(1)),
       tasks
     ]);
   }
 
-  pickupCard(e: DragEvent, column: Column, index: number) {
+  pickupCard(e: DragEvent, column: string, index: number) {
     e.dataTransfer!.effectAllowed = 'move';
     e.dataTransfer!.dropEffect = 'move';
     e.dataTransfer!.setData('from', column);
     e.dataTransfer!.setData('task-index', '' + index);
   }
 
-  dropCard(e: DragEvent, to: Column, newIndex: number) {
-    const from = e.dataTransfer!.getData('from') as Column;
+  dropCard(e: DragEvent, to: string, newIndex: number) {
+    const from = e.dataTransfer!.getData('from');
     const taskIndex = +e.dataTransfer!.getData('task-index');
     cms.moveTask({ from, taskIndex, to, newIndex });
   }

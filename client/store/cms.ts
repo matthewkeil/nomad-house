@@ -3,9 +3,9 @@ import { Module, VuexModule, Mutation, Action } from 'vuex-module-decorators';
 type Column = keyof CmsStore['tasks'];
 
 interface MoveTask {
-  from: Column;
+  from: string;
   taskIndex: number;
-  to: Column;
+  to: string;
   newIndex: number;
 }
 
@@ -28,7 +28,7 @@ export default class CmsStore extends VuexModule {
 
   @Mutation
   private MOVE_TASK({ from, taskIndex, to, newIndex }: MoveTask) {
-    const [task] = this.tasks[from].splice(taskIndex, 1);
-    this.tasks[to].splice(newIndex, 0, task);
+    const [task] = this.tasks[from as Column].splice(taskIndex, 1);
+    this.tasks[to as Column].splice(newIndex, 0, task);
   }
 }

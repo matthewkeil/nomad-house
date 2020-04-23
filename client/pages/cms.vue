@@ -1,8 +1,6 @@
 <template>
   <v-app>
-    <v-container fluid>
-      <nuxt-child />
-    </v-container>
+    <nuxt-child />
   </v-app>
 </template>
 
