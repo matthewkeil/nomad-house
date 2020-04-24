@@ -10,6 +10,6 @@
 import Vue from 'vue';
 import { Component } from 'vue-property-decorator';
 
-@Component({layout: 'base'})
+@Component({ layout: 'base' })
 export default class CMS extends Vue {}
 </script>

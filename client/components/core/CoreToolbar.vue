@@ -4,7 +4,7 @@
     <v-container mx-auto py-0>
       <v-layout>
         <v-img
-          :src="require('@/assets/img/logo.png')"
+          :src="require('@/assets/demo/img/logo.png')"
           class="mr-5"
           contain
           height="48"

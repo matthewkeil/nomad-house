@@ -1,9 +1,5 @@
 <template>
-  <v-footer
-    class="py-4"
-    dark
-    height="auto"
-  >
+  <v-footer class="py-4" dark height="auto">
     <v-container mx-auto>
       <v-layout wrap>
         <v-flex xs9>
@@ -20,12 +16,7 @@
           </base-button>
         </v-flex>
         <v-spacer />
-        <base-button
-          class="mr-0"
-          square
-          title="Go to top"
-          @click="$vuetify.goTo(0)"
-        >
+        <base-button class="mr-0" square title="Go to top" @click="$vuetify.goTo(0)">
           <v-icon>mdi-chevron-up</v-icon>
         </base-button>
       </v-layout>
@@ -35,43 +26,43 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import BaseButton from '../base/BaseButton.vue'
+import BaseButton from '../base/BaseButton.vue';
 
-  export default Vue.extend({
-    components: {
-      BaseButton,
-    },
-    data: () => ({
-      items: [
-        {
-          href: '#!',
-          icon: 'mdi-twitter'
-        },
-        {
-          href: '#!',
-          icon: 'mdi-instagram'
-        },
-        {
-          href: '#!',
-          icon: 'mdi-facebook'
-        },
-        {
-          href: '#!',
-          icon: 'mdi-google-plus'
-        },
-        {
-          href: '#!',
-          icon: 'mdi-reddit'
-        },
-        {
-          href: '#!',
-          icon: 'mdi-discord'
-        },
-        {
-          href: '#!',
-          icon: 'mdi-pinterest'
-        }
-      ]
-    })
+export default Vue.extend({
+  components: {
+    BaseButton
+  },
+  data: () => ({
+    items: [
+      {
+        href: '#!',
+        icon: 'mdi-twitter'
+      },
+      {
+        href: '#!',
+        icon: 'mdi-instagram'
+      },
+      {
+        href: '#!',
+        icon: 'mdi-facebook'
+      },
+      {
+        href: '#!',
+        icon: 'mdi-google-plus'
+      },
+      {
+        href: '#!',
+        icon: 'mdi-reddit'
+      },
+      {
+        href: '#!',
+        icon: 'mdi-discord'
+      },
+      {
+        href: '#!',
+        icon: 'mdi-pinterest'
+      }
+    ]
   })
+});
 </script>

@@ -1,8 +1,8 @@
 <template>
   <section>
-    <feed>
+    <ArticleFeed>
       <slot />
-    </feed>
+    </ArticleFeed>
   </section>
 </template>
 
@@ -11,8 +11,8 @@ import Vue from 'vue';
 import ArticleFeed from '@/components/blog/ArticleFeed.vue';
 
 export default Vue.extend({
-      components: {
-        ArticleFeed
-      }
-})
+  components: {
+    ArticleFeed
+  }
+});
 </script>

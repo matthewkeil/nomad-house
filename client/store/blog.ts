@@ -1,11 +1,7 @@
 export const state = () => ({
-    posts: []
-})
+  posts: []
+});
 
-export const actions = {
+export const actions = {};
 
-}
-
-export const mutations = {
-
-}
+export const mutations = {};
