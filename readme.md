@@ -5,3 +5,7 @@
 ## This is a subtitle with dashes
 
 ## Subtitle with pounds
+
+_italic thing_
+
+**bold thing**
