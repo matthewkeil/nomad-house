@@ -1,11 +1,3 @@
-<template>
-  <v-app>
-    <CoreToolbar />
-    <CoreDrawer />
-    <nuxt />
-  </v-app>
-</template>
-
 <script lang="ts">
 import Vue from 'vue';
 import CoreToolbar from '@/components/core/Toolbar.vue';
@@ -18,3 +10,11 @@ export default Vue.extend({
   }
 });
 </script>
+
+<template>
+  <v-app>
+    <CoreToolbar />
+    <CoreDrawer />
+    <nuxt />
+  </v-app>
+</template>
