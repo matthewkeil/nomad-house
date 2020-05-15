@@ -1,3 +1,23 @@
+<script lang="ts">
+import Vue from 'vue';
+import { core } from '../../store';
+
+export default Vue.extend({
+  name: 'CoreToolbar',
+  computed: {
+    links: () => core.links
+  },
+  methods: {
+    toggleDrawer: () => core.toggleDrawer(),
+    // TODO: these should be links not buttons that require a method
+    onClick(e: MouseEvent, link: any) {
+      e.stopPropagation();
+      if (link.to || !link.href) return;
+      this.$vuetify.goTo(link.href);
+    }
+  }
+});
+</script>
 <template>
   <v-app-bar app flat>
     <v-app-bar-nav-icon class="hidden-md-and-up" @click="toggleDrawer" />
@@ -34,24 +54,3 @@
     </v-container>
   </v-app-bar>
 </template>
-
-<script lang="ts">
-import Vue from 'vue';
-import { core } from '../../store';
-
-export default Vue.extend({
-  name: 'CoreToolbar',
-  computed: {
-    links: () => core.links
-  },
-  methods: {
-    toggleDrawer: () => core.toggleDrawer(),
-    // TODO: these should be links not buttons that require a method
-    onClick(e: MouseEvent, link: any) {
-      e.stopPropagation();
-      if (link.to || !link.href) return;
-      this.$vuetify.goTo(link.href);
-    }
-  }
-});
-</script>
