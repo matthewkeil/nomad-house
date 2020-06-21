@@ -27,11 +27,5 @@
   "typescript.tsdk": "node_modules/typescript/lib",
   "javascript.preferences.importModuleSpecifier": "auto",
   "vetur.experimental.templateInterpolationService": true,
-  "cSpell.words": [
-    "api’s",
-    "cloudform",
-    "jsnad",
-    "jsnsd",
-    "nuxt"
-  ]
+  "cSpell.words": ["cloudform", "nuxt"]
 }
