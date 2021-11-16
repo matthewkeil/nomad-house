@@ -10,7 +10,7 @@
     "netlify-cms-proxy-server": "netlify-cms-proxy-server"
   },
   "dependencies": {
-    "aws-sdk": "^2.657.0",
+    "aws-sdk": "^2.814.0",
     "dotenv": "^8.2.0",
     "log-update": "^4.0.0",
     "nomad-devops": "^1.0.10",
